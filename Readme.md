@@ -36,7 +36,7 @@
 
    **[⬆ Back to Top](#table-of-contents)**
 
- 2. ### What is advantages of Vue?
+2. ### What is advantages of Vue?
 
     **Small in size** — The size of Vue framework is 18 to 21KB and it takes no time for the user to download and use it.
     **Easy to Understand** — One of the reasons for the popularity of this framework is that it is quite easy to understand. The user can easily add Vue.js to his web project because of its simple structure.
@@ -47,22 +47,20 @@
     **Two-Way Communication** — Vue.js also facilitates two way communications because of its MVVM architecture which makes it quite easy to handle HTML blocks.
 
 
-    **[⬆ Back to Top](#table-of-contents)**
+   **[⬆ Back to Top](#table-of-contents)**
 
-  3. ### Explain Vue.js reactivity and common issues when tracking changes?
+3. ### Explain Vue.js reactivity and common issues when tracking changes?
 
     All properties defined in a Vue instance’s data option are reactive, meaning that if they change, the component is automatically updated and re-rendered as needed.
-
     All such properties are converted to getters and setters during initialization, thus allowing Vue to detect when those properties are accessed or changed.
-
     The following limitations must be accounted for when designing a Vue app:
 
     Vue cannot detect object property addition or deletion due to a JavaScript limitation, so the Vue.set method must be used to add new root-level reactive properties.
     Similarly, Vue cannot detect when an array item is modified using an index. Vue.set must be used here as well.
 
-    **[⬆ Back to Top](#table-of-contents)**
+   **[⬆ Back to Top](#table-of-contents)**
 
-  4. ### What is the virtual DOM and how is it beneficial?
+4. ### What is the virtual DOM and how is it beneficial?
 
     The **virtual DOM** is a tree-like data structure (or a collection) of JavaScript objects representing DOM nodes that are managed by Vue.js and that should be rendered on the page. These objects are called “virtual nodes” or VNodes for short.
 
@@ -70,10 +68,10 @@
 
     Working with the virtual DOM JavaScript object is significantly faster. Subsequently, Vue.js organizes DOM updates in batches for more efficiency.
 
-    **[⬆ Back to Top](#table-of-contents)**
+   **[⬆ Back to Top](#table-of-contents)**
 
 
-  5. ### What are Components in Vue.js?
+5. ### What are Components in Vue.js?
 
     Components are one of most powerful features of Vue js.In Vue components are custom elements that help extend basic HTML elements to encapsulate reusable code.
 
@@ -88,9 +86,9 @@
     }
     ```
 
-    **[⬆ Back to Top](#table-of-contents)**
+   **[⬆ Back to Top](#table-of-contents)**
 
-  6. ### Why do we need local registration?
+6. ### Why do we need local registration?
 
     Global registration often isn’t ideal. For example, if we are using a build system like Webpack, globally registering all components means that even if we stop using a component, it could still be included in our final build. This unnecessarily increases the amount of JavaScript your users have to download. In these cases, you can define your components as plain JavaScript objects:
 
@@ -114,10 +112,11 @@
 
     ```
 
-    **[⬆ Back to Top](#table-of-contents)**
+   **[⬆ Back to Top](#table-of-contents)**
 
 
-  7. ### What are list of features in Vue.js?
+7. ### What are list of features in Vue.js?
+
     Vue js comes with following features
 
     **Templates**
@@ -127,4 +126,4 @@
     **Routing**
 
 
-    **[⬆ Back to Top](#table-of-contents)**
+   **[⬆ Back to Top](#table-of-contents)**
