@@ -27,7 +27,9 @@
 |6  | [Why do we need local registration?](#Why-do-we-need-local-registration?) |
 |7  | [What are list of features in Vue.js](#what-are-list-of-features-in-Vue.js) |
 |8  | [What are the event modifiers available in Vue.js](#what-are-the-event-modifiers-available-in-Vue.js) |
-|9  | [Explain how can we work with binding inline styles?](#Explain-how-can-we-work-with-binding-inline-styles) |  
+|9  | [Explain how can we work with binding inline styles?](#Explain-how-can-we-work-with-binding-inline-styles) |
+|10  | [List type of Directive are available in Vuejs?](#List-type-of-Directive-are-available-in-Vuejs) |
+|11  | [What is Vue?](#what-is-Vue) |
 
 
 1. ### What is Vue?
@@ -171,6 +173,9 @@
        3. Literal Directives
        4. General Directives
 
+
+   **[⬆ Back to Top](#table-of-contents)**
+
   11. ### What are Directives in VUE.js, List some of them you used?
 
        Directives in Vue.js extend HTML with attributes and tags. Vue.js has built-in directives, but you can also make your custom directives. Following is a list of some directives used:
@@ -180,3 +185,6 @@
        3. v-model
        4. v-show
        5. v-if
+
+
+   **[⬆ Back to Top](#table-of-contents)**
