@@ -360,7 +360,7 @@
     3. v-if has higher toggle costs while v-show has higher initial render costs. i.e, v-show has a performance advantage if the elements are switched on and off frequently, while the v-if has the advantage when it comes to initial render time.
     4. v-if supports <template> tab but v-show doesn't support.
 
-
+    
     **[⬆ Back to Top](#table-of-contents)**
 
 21. ### What are rendering functions? for instance.
