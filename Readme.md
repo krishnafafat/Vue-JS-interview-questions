@@ -207,7 +207,7 @@
     4. **componentUpdated**: This is called after the containing component's VNode and the VNodes of its children have updated.
     5. **unbind**: This is called only once, when the directive is unbound from the element.
 
-    [custom directives hook](images/custom-directives-flat.jpg)
+    ![custom directives hook](images/custom-directives-flat.jpg)
 
     3. **Literal Directives** -
     4. **General Directives** -
