@@ -440,11 +440,12 @@
 
 23. ### What is the difference between v-show and v-if directives?
 
-    Below are some of the main differences between v-show and v-if directives -
+    Below are some of the main differences between between **v-show** and **v-if** directives,
+
     1. v-if only renders the element to the DOM if the expression passes whereas v-show renders all elements to the DOM and then uses the CSS display property to show/hide elements based on expression.
     2. v-if supports v-else and v-else-if directives whereas v-show doesn't support else directives.
     3. v-if has higher toggle costs while v-show has higher initial render costs. i.e, v-show has a performance advantage if the elements are switched on and off frequently, while the v-if has the advantage when it comes to initial render time.
-    4. v-if supports <template> tab but v-show doesn't support.
+    4. v-if supports `<template>` tab but v-show doesn't support.
 
 
     **[⬆ Back to Top](#table-of-contents)**
