@@ -161,16 +161,58 @@
 
     Following is list of directives available in Vue.js:
 
-    1. Empty Directives - Empty directives do not require and will ignore their attribute value. e.g. v-pre(skip) and v-cloak (display: none).
+    1. **Empty Directives** - Empty directives do not require and will ignore their attribute value. e.g. v-pre(skip) and v-cloak (display: none).
 
     ```
         <div v-pre>
         <!-- markup in here will not be compiled -->
         </div>
     ```
-    2. Custom Directive -
-    3. Literal Directives
-    4. General Directives
+    2. **Custom Directive** - Vue also allows us to register our own custom directives aside the default set of directives that are shipped in core (v-show and v-model). In Vue 2.0, the primary code reuse and abstraction is components- however there may be cases where we need some low-level DOM access on plain elements, custom directives will still be useful here. A typical example would be focusing on an input element, like an input text.
+
+    On page load, the element gains focus (Note: autofocus does not work on mobile safari). If one has not clicked on anything else since visiting the page, the text input should be focused. Let us build the directive that will accomplish this:
+
+    ```
+    // Registering a global custom directive called `v-focus`
+    Vue.directive('focus', {
+      // When the bound element is inserted into the DOM...
+      inserted: function (el) {
+        // Focus the element
+        el.focus()
+      }
+    })
+    ```
+    Instead if we want to register a directive locally, components accept directives option as well:
+    ```
+    directives: {
+      focus: {
+        // directive definition
+        inserted: function (el) {
+          el.focus()
+        }
+      }
+    }
+    ```
+    Then we can now use the new v-focus attribute on any element in our template as shown:
+    ```
+    <input v-focus>
+    ```
+    Hook Functions
+
+    Several hook functions can be provided by a directive's definition object:
+
+    1. **bind**: This is called only once, when the directive is first bound to the element. This is where we can do one-time setup work.
+    2. **inserted**: This is called when the bound element has been inserted into its parent node (this only guarantees the parent node presence, not necessarily in-document).
+    3. **update**: This is called after the containing component's VNode has updated, but possibly before the update of its children. The value of the directive may or may not have changed, but we can skip unnecessary updates by comparing the binding's current and old values (see hook arguments below).
+    4. **componentUpdated**: This is called after the containing component's VNode and the VNodes of its children have updated.
+    5. **unbind**: This is called only once, when the directive is unbound from the element.
+
+    (images/custom-directives-flat.svg)
+
+    3. **Literal Directives** -
+    4. **General Directives** -
+
+
 
 
     **[⬆ Back to Top](#table-of-contents)**
