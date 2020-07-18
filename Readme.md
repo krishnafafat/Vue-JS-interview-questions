@@ -48,6 +48,10 @@
 |35  | [How to create Two-way binding?](#How-to-create-Two-way-binding) |
 |36  | [What are filters in Vue js?](#what-are-filters-in-Vue-js) |
 |37  | [When to use keep-alive component?](#When-to-use-keep-alive-component) |
+|38  | [What are the properties of a Vue instance?](#what-are-the-properties-of-a-Vue-instance) |
+|39  | [What are built-in components?](#what-are-built-in-components) |
+|40  | [What is event key modifiers?](#what-is-event-key-modifiers) |
+|41  | [How to modify event?](#How-to-modify-event) |
 
 
 1. ### What is Vue?
@@ -91,7 +95,6 @@
 
    **[⬆ Back to Top](#table-of-contents)**
 
-
 5. ### What are Components in Vue?
 
    Components are one of most powerful features of Vue js.In Vue components are custom elements that help extend basic HTML elements to encapsulate reusable code.
@@ -132,7 +135,6 @@
    ```
 
    **[⬆ Back to Top](#table-of-contents)**
-
 
 7. ### What are list of features in Vue?
 
@@ -750,6 +752,82 @@
     </keep-alive>
     ```
     You also lose lifecycle hooks like created, mounted, etc. since the component is not being rebuilt from scratch anymore. You can replace those lifecycle hooks with hooks that are specific to keep-alive components.
+
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+38. ### What are the properties of a Vue instance?
+
+    Given an instance of Vue, stored into a variable const vm = new Vue(/*...*/) you can inspect and interact with it.
+
+    * **vm.$data** the data object associated to the instance
+    * **vm.$props** the props the instance has received
+    * **vm.$el** the DOM element to which the instance is bound
+    * **vm.$options** the object used to instantiate the Vue instance
+    * **vm.$parent** the parent instance
+    * **.$root** the root instance (if this is the root instance, this points to itself)
+    * **vm.$children** an array of children instances
+    * **vm.$slots** an array of the associated slots contained in the template
+    * **vm.$scopedSlots** an array of the associated scoped slots
+    * **vm.$refs** an object that contains a property for each element pointed by a ref attribute defined in the template
+    * **vm.$isServer** true if the Vue instance is running on the server (useful in server-side rendering)
+    * **vm.$attrs** an object of attributes that are provided to the component but not defined as props
+    * **vm.$listeners** an object of v-on event listeners assigned to the component
+
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+39. ### What are built-in components?
+
+    Vue provides 5 built-in components:
+
+    * **<component>**
+    * **<transition>**
+    * **transition-group>**
+    * **<keep-alive>**
+    * **<slot>**
+
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+40. ### What is event key modifiers?
+
+    key modifiers that allow us to listen to a particular key when handling key-related events such as keyup.
+
+    ```
+    <input v-on:keyup.13="addToCount" v-model="addValue">
+    ```
+    In the above example, when the keyup event is fired with the key code of 13 (the enter key), the addToCount method gets called.
+
+    Since it’s difficult to remember all of the key codes, Vue provides a set of pre-defined keys. Some examples are enter, tab, delete, esc, space and left.
+
+    Also, it’s possible to setup your own alias for key codes as follows:
+    ```
+    Vue.config.keyCodes.a = 65
+    ```
+
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+41. ### How to modify event?
+
+    There are frequently used calls that are made when handling events. Vue has made it easier for us to implement these by using modifiers.
+    The following modifiers are available in Vue.
+
+    * **v-on:click.native** trigger a native DOM event instead of a Vue event
+    * **v-on:click.stop** stop the click event propagation
+    * **v-on:click.passive** makes use of the passive option of addEventListener
+    * **v-on:click.capture** use event capturing instead of event bubbling
+    * **v-on:click.self** make sure the click event was not bubbled from a child event, but directly happened on that element
+    * **v-on:click.once** the event will only be triggered exactly onc
+    * **v-on:submit.prevent** : call event.preventDefault() on the triggered submit event, used to avoid a form submit to reload the page
+
+    Example -
+
+    ```
+    <a href="test" @click.prevent="addToCount">Add</a>
+    ```
+    The above code sample would remove the default behavior of the a tag and just call the addToCount  method. If we didn’t add the modifier, the page would try to re-direct to the path defined in the href attribute.
 
 
     **[⬆ Back to Top](#table-of-contents)**
