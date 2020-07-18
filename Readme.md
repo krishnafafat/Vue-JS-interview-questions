@@ -13,18 +13,18 @@
 | --- | --------- |
 |1  | [What is Vue?](#what-is-Vue) |
 |2  | [What is advantages of Vue?](#What-is-advantages-of-Vue) |
-|3  | [Explain Vue.js reactivity and common issues when tracking changes?](#Explain-Vue.js-reactivity-and-common-issues-when-tracking-changes) |
+|3  | [Explain Vue reactivity and common issues when tracking changes?](#Explain-Vue-reactivity-and-common-issues-when-tracking-changes) |
 |4  | [What is the virtual DOM and how is it beneficial?](#what-is-the-virtual-DOM-and-how-is-it-beneficial) |
-|5  | [What are Components in Vue.js](#what-are-Components-in-Vue.js) |
+|5  | [What are Components in Vue](#what-are-Components-in-Vue) |
 |6  | [Why do we need local registration?](#Why-do-we-need-local-registration?) |
-|7  | [What are list of features in Vue.js](#what-are-list-of-features-in-Vue.js) |
-|8  | [What are the event modifiers available in Vue.js](#what-are-the-event-modifiers-available-in-Vue.js) |
+|7  | [What are list of features in Vue](#what-are-list-of-features-in-Vue) |
+|8  | [What are the event modifiers available in Vue](#what-are-the-event-modifiers-available-in-Vue) |
 |9  | [Explain how can we work with binding inline styles?](#Explain-how-can-we-work-with-binding-inline-styles) |
 |10  | [List type of Directive are available in Vuejs?](#List-type-of-Directive-are-available-in-Vuejs) |
-|11  | [What are Directives in VUE.js, List some of them you used?](#What-are-Directives-in-VUE.js,-List-some-of-them-you-used) |
+|11  | [What are Directives in VUE, List some of them you used?](#What-are-Directives-in-VUE,-List-some-of-them-you-used) |
 |12  | [What is Vue loader?](#what-is-Vue-loader) |
 |13  | [How will you render the original HTML in the template?](#How-will-you-render-the-original-HTML-in-the-template) |
-|14  | [Explain lifecycle hooks in vue.js?](#Explain-lifecycle-hooks-in-vue.js) |
+|14  | [Explain lifecycle hooks in vue?](#Explain-lifecycle-hooks-in-vue) |
 |15  | [How to listen to events?](#How-to-listen-to-events) |
 |16  | [Which lifecycle hook is most suitable for getting data from API calls?](#Which-lifecycle-hook-is-most-suitable-for-getting-data-from-API-calls) |
 |17  | [When is the updated lifecycle hook called?](#When-is-the-updated-lifecycle-hook-called) |
@@ -35,9 +35,9 @@
 |22  | [How does prop specify its type requirements?](#How-does-prop-specify-its-type-requirements) |
 |23  | [What is the difference between v-show and v-if directives?](#What-is-the-difference-between-v-show-and-v-if-directives) |
 |24 | [What is Vue Router?](#what-is-Vue-Router) |
-|25 | [What is parent in Vue.js?](#what-is-parent-in-Vue.js) |
-|26 | [What is key in Vue.js?](#what-is-key-in-Vue.js) |
-|27 | [What is the role of ref in Vue.js?](#what-is-the-role-of-ref-in-Vue.js) |
+|25 | [What is parent in Vue?](#what-is-parent-in-Vue) |
+|26 | [What is key in Vue?](#what-is-key-in-Vue) |
+|27 | [What is the role of ref in Vue?](#what-is-the-role-of-ref-in-Vue) |
 
 
 1. ### What is Vue?
@@ -60,7 +60,7 @@
 
    **[⬆ Back to Top](#table-of-contents)**
 
-3. ### Explain Vue.js reactivity and common issues when tracking changes?
+3. ### Explain Vue reactivity and common issues when tracking changes?
 
    All properties defined in a Vue instance’s data option are reactive, meaning that if they change, the component is automatically updated and re-rendered as needed.
    All such properties are converted to getters and setters during initialization, thus allowing Vue to detect when those properties are accessed or changed.
@@ -82,7 +82,7 @@
    **[⬆ Back to Top](#table-of-contents)**
 
 
-5. ### What are Components in Vue.js?
+5. ### What are Components in Vue?
 
    Components are one of most powerful features of Vue js.In Vue components are custom elements that help extend basic HTML elements to encapsulate reusable code.
 
@@ -124,7 +124,7 @@
    **[⬆ Back to Top](#table-of-contents)**
 
 
-7. ### What are list of features in Vue.js?
+7. ### What are list of features in Vue?
 
    Vue js comes with following features
 
@@ -137,7 +137,7 @@
 
    **[⬆ Back to Top](#table-of-contents)**
 
-8. ### What are the event modifiers available in Vue.js?
+8. ### What are the event modifiers available in Vue?
 
    The list of available event modifiers is given below:
 
@@ -230,7 +230,7 @@
 
     **[⬆ Back to Top](#table-of-contents)**
 
-11. ### What are Directives in VUE.js, List some of them you used?
+11. ### What are Directives in VUE, List some of them you used?
 
     Directives in Vue.js extend HTML with attributes and tags. Vue.js has built-in directives, but you can also make your custom directives. Following is a list of some directives used:
 
@@ -270,7 +270,7 @@
 
     **[⬆ Back to Top](#table-of-contents)**
 
-14. ### Explain lifecycle hooks in vue.js?
+14. ### Explain lifecycle hooks in vue?
 
     Lifecycle hooks are an important part of any serious component. You often need to know when your component is created, added to the DOM, updated, or destroyed. Lifecycle hooks are a window into how the library you’re using works behind-the-scenes.
 
@@ -469,7 +469,7 @@
 
     **[⬆ Back to Top](#table-of-contents)**
 
-25. ### What is parent in Vue.js?
+25. ### What is parent in Vue?
 
     Similar to $root, the $parent property can be used to access the parent instance from a child.
 
@@ -480,7 +480,7 @@
 
     **[⬆ Back to Top](#table-of-contents)**
 
-26. ### What is key in Vue.js?
+26. ### What is key in Vue?
 
     In order to render DOM elements more efficiently, Vue.js reuses the elements instead of creating them from scratch every time. This default mode is efficient, but in some cases it may causes problems. For example, if you try to render the same input element in both v-if and v-else blocks then it holds the previous value as below:
 
@@ -498,7 +498,7 @@
 
     **[⬆ Back to Top](#table-of-contents)**
 
-27. ### What is the role of ref in Vue.js?
+27. ### What is the role of ref in Vue?
 
     Despite the existence of props and events, sometimes if we still need to directly access a child component, we can assign a reference ID to the child component using the ref attribute. For example -
 
