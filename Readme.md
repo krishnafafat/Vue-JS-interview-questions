@@ -35,7 +35,7 @@
 |22  | [How does prop specify its type requirements?](#How-does-prop-specify-its-type-requirements) |
 |23  | [What is the difference between v-show and v-if directives?](#What-is-the-difference-between-v-show-and-v-if-directives) |
 |24 | [What is Vue Router?](#what-is-Vue-Router) |
-|25 | [What is $parent in Vue.js?](#what-is-$parent-in-Vue.js) |
+|25 | [What is parent in Vue.js?](#what-is-parent-in-Vue.js) |
 |26 | [What is key in Vue.js?](#what-is-key-in-Vue.js) |
 |27 | [What is the role of ref in Vue.js?](#what-is-the-role-of-ref-in-Vue.js) |
 
@@ -469,7 +469,7 @@
 
     **[⬆ Back to Top](#table-of-contents)**
 
-25. ### What is $parent in Vue.js?
+25. ### What is parent in Vue.js?
 
     Similar to $root, the $parent property can be used to access the parent instance from a child.
 
