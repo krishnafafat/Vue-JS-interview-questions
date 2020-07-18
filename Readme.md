@@ -418,33 +418,3 @@
 
 
     **[⬆ Back to Top](#table-of-contents)**
-
-22. ### What is mixin?
-
-    Mixins enables us to write pluggable and reusable features for Vue components. If you want to reuse a set of component options between multiple components, such as lifecycle hooks, methods, etc., you can write it as mixins and simply reference it in the component. Then merge the contents of mixin into the component. If you want to define a lifecycle hook in mixin, it will take precedence over the component’s own hook when executed.
-
-
-    **[⬆ Back to Top](#table-of-contents)**
-
-23. ### How does prop specify its type requirements?
-
-    By implementing the prop verification option, you can specify type requirements for a single prop. This has no impact on production, but warnings are issued during the development phase to help developers identify potential problems with specific types of requirements for incoming data and props.
-
-    To configure three props -
-    
-    ```
-    props: {
-        accountNumber: {
-            type: Number,
-            required: true
-        },
-        name: {
-            type: String,
-            required: true
-       },
-       favoriteColors: Array
-    }
-    ```
-
-
-    **[⬆ Back to Top](#table-of-contents)**
