@@ -33,6 +33,10 @@
 |13  | [How will you render the original HTML in the template?](#How-will-you-render-the-original-HTML-in-the-template) |
 |14  | [Explain lifecycle hooks in vue.js?](#Explain-lifecycle-hooks-in-vue.js) |
 |15  | [How to listen to events?](#How-to-listen-to-events) |
+|16  | [Which lifecycle hook is most suitable for getting data from API calls?](#Which-lifecycle-hook-is-most-suitable-for-getting-data-from-API-calls) |
+|17  | [When is the “updated” lifecycle hook called?](#When-is-the-“updated”-lifecycle-hook-called) |
+|18  | [Why not use the arrow function when writing a lifecycle hook or other option / property in a Vue instance?](#Why-not-use-the-arrow-function-when-writing-a-lifecycle-hook-or-other-option-/-property-in-a-Vue-instance) |
+|19  | [What is asynchronous component?](#what-is-asynchronous-component) |
 
 
 1. ### What is Vue?
@@ -214,9 +218,10 @@
     ![custom directives hook](images/custom-directives-flat.jpg)
 
     3. **Literal Directives** - Some directives don’t create data bindings - they simply take the attribute value as a literal string. For example the v-component directive:
-    ```
-      <div v-component="my-component"></div>
-    ```
+
+      ```
+        <div v-component="my-component"></div>
+      ```
     Here "my-component" is not a data property - it’s a string ID that Vue.js uses to lookup the corresponding Component constructor.
 
     4. **General Directives** -
@@ -268,7 +273,7 @@
 
     Lifecycle hooks are an important part of any serious component. You often need to know when your component is created, added to the DOM, updated, or destroyed. Lifecycle hooks are a window into how the library you’re using works behind-the-scenes.
 
-    1. **beforeCreate**  — This is the first hook that gets called after the Vue instance has been initialized. At this stage, data observation (reactivity), events, computed properties and watchers are yet to be set up. Therefore , we cannot interact with any parts of the component.
+    1. **beforeCreate**  — This is the first hook that gets called after the Vue instance has been initialized. At this stage, data observation (reactivity), events, computed properties and watchers are yet to be set up. Therefore, we cannot interact with any parts of the component.
 
     2. **Created**  — This hook is called after the instance is created. At this stage, the instance has finished processing, data observation (reactivity), computed properties, methods, watchers and event callbacks have been set up. You can’t interact with the DOM at this stage because your component has not been mounted. The $el property is not also available yet.
 
@@ -278,7 +283,7 @@
 
     5. **beforeUpdate**  — It is called anytime changes are made to our data and the DOM needs to be updated, right before the DOM is patched. This is a good place to access the existing DOM before an update, e.g. to manually remove an added event listeners. This hook is not called during server-side rendering, because only the initial render is performed at server-side.
 
-    6. **Updated**  — hook is fired after a change has been made. The component’s DOM would have been updated when this hook is called, so you can perform DOM-dependent operations here. However, in most cases you should avoid changing state inside the hook
+    6. **Updated**  — Hook is fired after a change has been made. The component’s DOM would have been updated when this hook is called, so you can perform DOM-dependent operations here. However, in most cases you should avoid changing state inside the hook
 
     7. **beforeDestroy**  — Called right before a Vue instance is destroyed. At this stage the instance is still fully functional. You can perform necessary cleanups here. Please note that this hook is not called during sever-side rendering.
 
@@ -306,5 +311,45 @@
       })
     ```
 
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+16. ### Which lifecycle hook is most suitable for getting data from API calls?
+
+    Although this depends on the purpose and purpose of the component, the **created** life cycle hook is usually very suitable for placing API calls. You can use the data and responsiveness features of the component, but the component has not yet rendered.
+
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+17. ### When is the “updated” lifecycle hook called?
+
+    After the responsive data is updated and the virtual DOM is re rendered, the updated hook is called. It can be used to perform DOM related operations, but (by default) there is no guarantee that subcomponents will be rendered, although it can also be used in update functions **this.$nextTick** To ensure that.
+
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+18. ### Why not use the arrow function when writing a lifecycle hook or other option / property in a Vue instance?
+
+    Arrow function is not defined by itself **this** Context, but bound to the context of its parent function. When you use arrow function in Vue program（=> When **this** Keyword disease is not bound to a Vue instance, so an error is raised. Therefore, it is strongly recommended to use the standard function declaration instead.
+
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+19. ### What is asynchronous component?
+
+    When a large program uses a large number of components, it may not make sense to load all components from the server at the same time. In this case, Vue allows us to define components that are loaded asynchronously from the server when needed. When declaring or registering a component, Vue accepts the factory function that provides promise. You can then “parse” the component when it is called.
+
+    By loading only the basic components and delaying the loading of asynchronous components to the future call time, the bandwidth and program loading time can be saved.
+
+    This is a simple example of an asynchronous component.
+
+    ```
+      new Vue({
+          components: {
+              ‘tweet-box’: () => import(‘./components/async/TweetBox’)
+          }
+      });
+    ```
+    When used in this way, webpack’s code splitting will be used to provide this functionality.
 
     **[⬆ Back to Top](#table-of-contents)**
