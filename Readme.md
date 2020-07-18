@@ -41,6 +41,13 @@
 |28  | [What is Vue props?](#what-is-Vue-props) |
 |29  | [How do you set up a Webpack in Vue?](#How-do-you-set-up-a-Webpack-in-Vue) |
 |30  | [What is slot and slot-scoped in Vue?](#what-is-slot-and-slot-scoped-in-Vue) |
+|31  | [What are the conditional directives in Vue?](#what-are-the-conditional-directives-in-Vue) |
+|32  | [What is vue instance?](#what-is-vue-instance) |
+|33  | [What is Vue CLI tool?](#what-is-Vue-CLI tool) |
+|34  | [How we can bind HTML classes in Vue JS?](#How-we-can-bind-HTML-classes-in-Vue-JS) |
+|35  | [How to create Two-way binding?](#How-to-create-Two-way-binding) |
+|36  | [What are filters in Vue js?](#what-are-filters-in-Vue-js) |
+|37  | [When to use keep-alive component?](#When-to-use-keep-alive-component) |
 
 
 1. ### What is Vue?
@@ -535,8 +542,6 @@
     * npm install babel-loader webpack –save-dev
     * Open Webpack package.json and add a webpack script
     * In es6-tutorial, create a new file named webpack.config.js defined as follows -
-
-
     ```
     var path = require(‘path’);
     var webpack = require(‘webpack’);
@@ -614,6 +619,137 @@
         {{ data.header.label }}
       </th>
     ```
+
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+31. ### What are the conditional directives in vue?
+
+    VueJS provides set of directives to show or hide elements based on conditions. The available directives are: ** v-if, v-else, v-else-if and v-show**
+
+    1. v-if: The v-if directive adds or removes DOM elements based on the given expression. For example, the below button will not show if isLoggedIn is set to false.
+
+    ```
+      <button v-if="isLoggedIn">Logout</button>
+    ```
+    You can also control multiple elements with a single v-if statement by wrapping all the elements in a element with the condition. For example, you can have both label and button together conditionally applied,
+
+    ```
+      <template v-if="isLoggedIn">
+        <label> Logout </button>
+        <button> Logout </button>
+      </template>
+    ```
+    2. v-else: This directive is used to display content only when the expression adjacent v-if resolves to false. This is similar to else block in any programming language to display alternative content and it is preceded by v-if or v-else-if block. You don't need to pass any value to this. For example, v-else is used to display LogIn button if isLoggedIn(not logged in) is set to false.
+
+    ```
+      <button v-if="isLoggedIn"> Logout </button>
+      <button v-else> Log In </button>
+    ```
+    3. v-else-f: This directive is used when we need more than two options to be checked. For example, ifLoginDisabled property is disabled then we need to prevent user to login instead just display the label. This can be achieved through v-else statement.
+
+    ```
+      <button v-if="isLoggedIn"> Logout </button>
+        <label v-else-if="isLoginDisabled"> User login disabled </label>
+      <button v-else> Log In </button>
+    ```  
+    4. v-show: This directive is similar to v-if but it renders all elements to the DOM and then uses the CSS display property to show/hide elements. This directive is recommended if the elements are switched on and off frequently.
+
+    ```
+      <span if-show="user.name">Welcome user,{{user.name}}</span>
+    ```
+
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+32. ###  What is vue instance?
+
+    Every Vue application works by creating a new Vue instance with the Vue function. Generally the variable vm (short for ViewModel) is used to refer Vue instance. You can create vue instance as below,
+
+    ```
+    var vm = new Vue({
+      // options
+    })
+    ```
+
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+33. ### What is Vue CLI tool?
+
+    It is a npm pacakge npm package and allows using the vue command in terminal or command line. It allows to quickly create a Vue project using project scaffolding.
+
+    To create a new project using the CLI use the following below command
+
+    ```
+    vue create projectName
+    ```
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+34. ### How we can bind HTML classes in Vue JS?
+
+    We can pass an object to v-bind:class to dynamically toggle classes:
+
+    ```
+    <div v-bind:class="{ active: isActive }"></div>
+    ```
+    The above syntax means the presence of the active class will be determined by the truthiness of the data property isActive.
+
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+35. ### How to create Two-way binding?
+
+    You can use the v-model directive to create two-way data bindings on form input, textarea, and select elements. It automatically picks the correct way to update the element based on the input type
+
+    ```
+    <input v-model="message" placeholder="edit me">
+    <p>Message is: {{ message }}</p>
+    ```
+
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+36. ### What are filters in Vue js?
+
+    Vue.js allows us to create filters which can be used for applying text formatting.They are used to make the data presentable to the user.
+
+    To use a filter we use the pipe character before the filter name.In the following example we are applying the filter filterName to the Expression expression.
+
+    ```
+    {{Expression | filterName}}
+    ```
+    We register a filter globally or locally.To create filter locally assign the filter method to filter property:
+
+    ```
+    filters: {
+      boolean: booleanFilter
+    },
+    ```
+    You can create a global filter as:
+
+    ```
+    Vue.filter('filterName', function(value) {
+      return//data
+    });
+    ```
+
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+37. ### When to use keep-alive component?
+
+    To keep the switched-out components in memory, to make that happen, you should use <keep-alive> element:
+
+    The only disadvantage is that these components are kept in memory and therefore their state is saved and not reset.
+
+    ```
+    <keep-alive>
+          <component :is="currentPage"></component>
+    </keep-alive>
+    ```
+    You also lose lifecycle hooks like created, mounted, etc. since the component is not being rebuilt from scratch anymore. You can replace those lifecycle hooks with hooks that are specific to keep-alive components.
 
 
     **[⬆ Back to Top](#table-of-contents)**
