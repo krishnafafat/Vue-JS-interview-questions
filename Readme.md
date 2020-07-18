@@ -16,12 +16,12 @@
 |3  | [Explain Vue reactivity and common issues when tracking changes?](#Explain-Vue-reactivity-and-common-issues-when-tracking-changes) |
 |4  | [What is the virtual DOM and how is it beneficial?](#what-is-the-virtual-DOM-and-how-is-it-beneficial) |
 |5  | [What are Components in Vue](#what-are-Components-in-Vue) |
-|6  | [Why do we need local registration?](#Why-do-we-need-local-registration?) |
+|6  | [Why do we need local registration?](#Why-do-we-need-local-registration) |
 |7  | [What are list of features in Vue](#what-are-list-of-features-in-Vue) |
 |8  | [What are the event modifiers available in Vue](#what-are-the-event-modifiers-available-in-Vue) |
 |9  | [Explain how can we work with binding inline styles?](#Explain-how-can-we-work-with-binding-inline-styles) |
 |10  | [List type of Directive are available in Vuejs?](#List-type-of-Directive-are-available-in-Vuejs) |
-|11  | [What are Directives in VUE, List some of them you used?](#What-are-Directives-in-VUE,-List-some-of-them-you-used) |
+|11  | [What are Directives in Vue and List some of them you used?](#What-are-Directives-in-Vue-and-List-some-of-them-you-used) |
 |12  | [What is Vue loader?](#what-is-Vue-loader) |
 |13  | [How will you render the original HTML in the template?](#How-will-you-render-the-original-HTML-in-the-template) |
 |14  | [Explain lifecycle hooks in vue?](#Explain-lifecycle-hooks-in-vue) |
@@ -230,7 +230,7 @@
 
     **[⬆ Back to Top](#table-of-contents)**
 
-11. ### What are Directives in VUE, List some of them you used?
+11. ### What are Directives in Vue and List some of them you used?
 
     Directives in Vue.js extend HTML with attributes and tags. Vue.js has built-in directives, but you can also make your custom directives. Following is a list of some directives used:
 
