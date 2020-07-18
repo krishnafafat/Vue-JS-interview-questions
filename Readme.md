@@ -781,11 +781,11 @@
 
     Vue provides 5 built-in components:
 
-    * **<component>**
-    * **<transition>**
-    * **transition-group>**
-    * **<keep-alive>**
-    * **<slot>**
+    * <component>
+    * <transition>
+    * <transition-group>
+    * <keep-alive>
+    * <slot>
 
 
     **[⬆ Back to Top](#table-of-contents)**
