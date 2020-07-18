@@ -34,10 +34,12 @@
 |21  | [What is mixin?](#what-is-mixin) |
 |22  | [How does prop specify its type requirements?](#How-does-prop-specify-its-type-requirements) |
 |23  | [What is the difference between v-show and v-if directives?](#What-is-the-difference-between-v-show-and-v-if-directives) |
-|24 | [What is Vue Router?](#what-is-Vue-Router) |
-|25 | [What is parent in Vue?](#what-is-parent-in-Vue) |
-|26 | [What is key in Vue?](#what-is-key-in-Vue) |
-|27 | [What is the role of ref in Vue?](#what-is-the-role-of-ref-in-Vue) |
+|24  | [What is Vue Router?](#what-is-Vue-Router) |
+|25  | [What is parent in Vue?](#what-is-parent-in-Vue) |
+|26  | [What is key in Vue?](#what-is-key-in-Vue) |
+|27  | [What is the role of ref in Vue?](#what-is-the-role-of-ref-in-Vue) |
+|28  | [What is Vue props?](#what-is-Vue-props) |
+|29  | [How do you set up a Webpack in Vue?](#How-do-you-set-up-a-Webpack-in-Vue) |
 
 
 1. ### What is Vue?
@@ -513,6 +515,56 @@
     ```
 
     $refs are only populated after the component has been rendered, and they are not reactive. Hence we should avoid accessing $refs from within templates or computed properties.
+
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+28. ### What are Vue Props?
+
+    Props (or Properties) are defined as the ways in which data is passed from parent component down to its child component.
+
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+29. ### How do you set up a Webpack in Vue?
+
+    Step#1: Ste up Webpack:
+
+    * Install Babel-loader and Webpack module:
+    * npm install babel-loader webpack –save-dev
+    * Open Webpack package.json and add a webpack script
+    * In es6-tutorial, create a new file named webpack.config.js defined as follows -
+
+    ```
+    var path = require(‘path’);
+    var webpack = require(‘webpack’);
+
+    module.exports = {
+      entry: ‘./js/main.js’,
+      output: {
+        path: path.resolve(__dirname, ‘build’),
+        filename: ‘main.bundle.js’
+      },
+    module: {
+      loaders: [{
+        test: /\.js$/,
+        loader: ‘babel-loader’,
+        query: {
+          presets: [‘es2015’]
+        }
+      }]
+    },
+    stats: {
+      colors: true
+    },
+
+    devtool: ‘source-map’
+    ```
+    Step# 2: Building Webpack:
+
+    Run following command: **npm run webpack**
+
+    Open browser, access http://localhost:8080/, and click on the calculate button.
 
 
     **[⬆ Back to Top](#table-of-contents)**
