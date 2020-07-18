@@ -18,7 +18,6 @@
 
 | No. | Questions |
 | --- | --------- |
-|   | **Core Vue JS** |
 |1  | [What is Vue?](#what-is-Vue) |
 |2  | [What is advantages of Vue?](#What-is-advantages-of-Vue) |
 |3  | [Explain Vue.js reactivity and common issues when tracking changes?](#Explain-Vue.js-reactivity-and-common-issues-when-tracking-changes) |
@@ -30,6 +29,11 @@
 |9  | [Explain how can we work with binding inline styles?](#Explain-how-can-we-work-with-binding-inline-styles) |
 |10  | [List type of Directive are available in Vuejs?](#List-type-of-Directive-are-available-in-Vuejs) |
 |11  | [What are Directives in VUE.js, List some of them you used?](#What-are-Directives-in-VUE.js,-List-some-of-them-you-used) |
+|12  | [What is Vue loader?](#what-is-Vue-loader) |
+|13  | [How will you render the original HTML in the template?](#How-will-you-render-the-original-HTML-in-the-template) |
+|14  | [Explain lifecycle hooks in vue.js?](#Explain-lifecycle-hooks-in-vue.js) |
+|15  | [How to listen to events?](#How-to-listen-to-events) |
+
 
 1. ### What is Vue?
 
@@ -209,7 +213,12 @@
 
     ![custom directives hook](images/custom-directives-flat.jpg)
 
-    3. **Literal Directives** -
+    3. **Literal Directives** - Some directives don’t create data bindings - they simply take the attribute value as a literal string. For example the v-component directive:
+    ```
+      <div v-component="my-component"></div>
+    ```
+    Here "my-component" is not a data property - it’s a string ID that Vue.js uses to lookup the corresponding Component constructor.
+
     4. **General Directives** -
 
 
@@ -224,6 +233,78 @@
     3. v-model
     4. v-show
     5. v-if
+
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+12. ### What is Vue loader?
+
+    Vue loader is the loader module of webpack, which enables us to write single file components in. Vue file format. A single file component file has three parts: template, script, and style. The Vue loader module allows webpack to extract and process each part using a separate loader module, such as sass or SCSS loader. This setting allows us to write programs seamlessly using. Vue files.
+
+    The Vue loader module also allows static resources to be treated as module dependencies and to be processed using the webpack loader. It also allows for hot reloading during development.    
+
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+13. ### How will you render the original HTML in the template?
+
+    A typical way to output content in a template is to use the mustache syntax tag to output data from a method, property, or data variable. But the mustache tag renders the text. If you try to render HTML using the mustache tag, it will render as a text string and will not be parsed. To render and parse content into HTML, we can use the v-html directive, as shown below.
+
+    ```
+      <p>Using mustaches: {{ rawHtml }}</p>
+      <p>Using v-html directive: <span v-html="rawHtml"></span></p>
+    ```
+
+    ```
+      Using mustaches: <span style="color:red">This should be red</span>
+      Using v-html directive: This should be red
+    ```
+    The contents of the span will be replaced with the value of the rawHtml property, interpreted as plain HTML - data bindings are ignored. Note that you cannot use v-html to compose template partials, because Vue is not a string-based templating engine. Instead, components are preferred as the fundamental unit for UI reuse and composition.
+
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+14. ### Explain lifecycle hooks in vue.js?
+
+    Lifecycle hooks are an important part of any serious component. You often need to know when your component is created, added to the DOM, updated, or destroyed. Lifecycle hooks are a window into how the library you’re using works behind-the-scenes.
+
+    1. **beforeCreate**  — This is the first hook that gets called after the Vue instance has been initialized. At this stage, data observation (reactivity), events, computed properties and watchers are yet to be set up. Therefore , we cannot interact with any parts of the component.
+
+    2. **Created**  — This hook is called after the instance is created. At this stage, the instance has finished processing, data observation (reactivity), computed properties, methods, watchers and event callbacks have been set up. You can’t interact with the DOM at this stage because your component has not been mounted. The $el property is not also available yet.
+
+    3. **beforeMount**  — At this stage, the template is compiled, either from the template or render options, or from the outerHTML of the element that Vue was initialized to. The template isn’t rendered yet and the $el method doesn’t exist either. Please note that this hook is not called during sever-side rendering.
+
+    4. **Mounted**  — Called after the instance has been mounted, where el property is replaced by the newly created vm.$el. If the root instance is mounted to an in-document element, vm.$el will also be in-document when mounted is called. The component becomes fully functional after the mounted hook is called and we can fully interact with it.
+
+    5. **beforeUpdate**  — It is called anytime changes are made to our data and the DOM needs to be updated, right before the DOM is patched. This is a good place to access the existing DOM before an update, e.g. to manually remove an added event listeners. This hook is not called during server-side rendering, because only the initial render is performed at server-side.
+
+    6. **Updated**  — hook is fired after a change has been made. The component’s DOM would have been updated when this hook is called, so you can perform DOM-dependent operations here. However, in most cases you should avoid changing state inside the hook
+
+    7. **beforeDestroy**  — Called right before a Vue instance is destroyed. At this stage the instance is still fully functional. You can perform necessary cleanups here. Please note that this hook is not called during sever-side rendering.
+
+    8. **Destroyed**  — Called after a Vue instance has been destroyed. When this hook is called, all directives of the Vue instance have been unbound, all event listeners have been removed, and all child Vue instances have also been destroyed. Please note that this hook is not called during sever-side rendering.
+
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+15. ### How to listen to events?
+
+    We can use the v-on directive to listen to DOM events and run some JavaScript when they’re triggered.
+
+    ```
+      <div id="example-1">
+        <button v-on:click="counter += 1">Add 1</button>
+        <p>The button above has been clicked {{ counter }} times.</p>
+      </div>
+    ```
+    ```
+      var example1 = new Vue({
+        el: '#example-1',
+        data: {
+          counter: 0
+        }
+      })
+    ```
 
 
     **[⬆ Back to Top](#table-of-contents)**
