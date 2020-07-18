@@ -351,19 +351,7 @@
 
     **[⬆ Back to Top](#table-of-contents)**
 
-20. ### What is the difference between v-show and v-if directives?
-
-    Below are some of the main differences between between v-show and v-if directives,
-
-    * v-if only renders the element to the DOM if the expression passes whereas v-show renders all elements to the DOM and then uses the CSS display property to show/hide elements based on expression.
-    * v-if supports v-else and v-else-if directives whereas v-show doesn't support else directives.
-    * v-if has higher toggle costs while v-show has higher initial render costs. i.e, v-show has a performance advantage if the elements are switched on and off frequently, while the v-if has the advantage when it comes to initial render time.
-    * v-if supports <template> tab but v-show doesn't support.
-
-
-**[⬆ Back to Top](#table-of-contents)**
-
-21.   ### What are rendering functions? for instance.
+21.  ### What are rendering functions? for instance.
 
     Vue allows us to build templates in a number of ways, the most common of which is to use only HTML with special instructions and mustache tags for response functions. But you can also use JavaScript to build templates using special function classes (called rendering functions). These functions are very close to the compiler, which means they are more efficient and faster than other template types. Because you use JavaScript to write rendering functions, you are free to use the language where you need to add custom functions directly.
 
