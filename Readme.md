@@ -43,7 +43,7 @@
 |30  | [What is slot and slot-scoped in Vue?](#what-is-slot-and-slot-scoped-in-Vue) |
 |31  | [What are the conditional directives in Vue?](#what-are-the-conditional-directives-in-Vue) |
 |32  | [What is vue instance?](#what-is-vue-instance) |
-|33  | [What is Vue CLI tool?](#what-is-Vue-CLI tool) |
+|33  | [What is Vue CLI tool?](#what-is-Vue-CLI-tool) |
 |34  | [How we can bind HTML classes in Vue JS?](#How-we-can-bind-HTML-classes-in-Vue-JS) |
 |35  | [How to create Two-way binding?](#How-to-create-Two-way-binding) |
 |36  | [What are filters in Vue js?](#what-are-filters-in-Vue-js) |
