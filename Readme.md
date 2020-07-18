@@ -469,7 +469,7 @@
 
     **[⬆ Back to Top](#table-of-contents)**
 
-25. ### What is $parent in Vue?
+25. ### What is $parent in Vue.js?
 
     Similar to $root, the $parent property can be used to access the parent instance from a child.
 
