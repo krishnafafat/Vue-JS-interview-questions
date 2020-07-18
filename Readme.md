@@ -30,11 +30,10 @@
 |17  | [When is the updated lifecycle hook called?](#When-is-the-updated-lifecycle-hook-called) |
 |18  | [Why not use the arrow function when writing a lifecycle hook or other option or property in a Vue instance?](#Why-not-use-the-arrow-function-when-writing-a-lifecycle-hook-or-other-option-or-property-in-a-Vue-instance) |
 |19  | [What is asynchronous component?](#what-is-asynchronous-component) |
-|20  | [What is the difference between v-show and v-if directives?](#What-is-the-difference-between-v-show-and-v-if-directives) |
-|21  | [What are rendering functions? for instance](#what-are-rendering-functions-for-instance) |
-|22  | [What is mixin?](#what-is-mixin) |
-|23  | [How does prop specify its type requirements?](#How-does-prop-specify-its-type-requirements) |
-
+|20  | [What are rendering functions? for instance](#what-are-rendering-functions-for-instance) |
+|21  | [What is mixin?](#what-is-mixin) |
+|22  | [How does prop specify its type requirements?](#How-does-prop-specify-its-type-requirements) |
+|23  | [What is the difference between v-show and v-if directives?](#What-is-the-difference-between-v-show-and-v-if-directives) |
 
 1. ### What is Vue?
 
@@ -351,7 +350,7 @@
 
     **[⬆ Back to Top](#table-of-contents)**
 
-21.  ### What are rendering functions? for instance.
+20. ### What are rendering functions? for instance.
 
     Vue allows us to build templates in a number of ways, the most common of which is to use only HTML with special instructions and mustache tags for response functions. But you can also use JavaScript to build templates using special function classes (called rendering functions). These functions are very close to the compiler, which means they are more efficient and faster than other template types. Because you use JavaScript to write rendering functions, you are free to use the language where you need to add custom functions directly.
 
@@ -406,3 +405,45 @@
 
 
     **[⬆ Back to Top](#table-of-contents)**
+
+21. ### What is mixin?
+
+    Mixins enables us to write pluggable and reusable features for Vue components. If you want to reuse a set of component options between multiple components, such as lifecycle hooks, methods, etc., you can write it as mixins and simply reference it in the component. Then merge the contents of mixin into the component. If you want to define a lifecycle hook in mixin, it will take precedence over the component’s own hook when executed.
+
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+22. ### How does prop specify its type requirements?
+
+    By implementing the prop verification option, you can specify type requirements for a single prop. This has no impact on production, but warnings are issued during the development phase to help developers identify potential problems with specific types of requirements for incoming data and props.
+
+    To configure three props -
+
+    ```
+    props: {
+        accountNumber: {
+            type: Number,
+            required: true
+        },
+        name: {
+            type: String,
+            required: true
+       },
+       favoriteColors: Array
+    }
+    ```
+
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+23. ### What is the difference between v-show and v-if directives?
+
+    Below are some of the main differences between between v-show and v-if directives,
+
+    * v-if only renders the element to the DOM if the expression passes whereas v-show renders all elements to the DOM and then uses the CSS display property to show/hide elements based on expression.
+    * v-if supports v-else and v-else-if directives whereas v-show doesn't support else directives.
+    * v-if has higher toggle costs while v-show has higher initial render costs. i.e, v-show has a performance advantage if the elements are switched on and off frequently, while the v-if has the advantage when it comes to initial render time.
+    * v-if supports <template> tab but v-show doesn't support.
+
+
+**[⬆ Back to Top](#table-of-contents)**
