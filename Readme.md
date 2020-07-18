@@ -12,8 +12,7 @@
 | No. | Questions |
 | --- | --------- |
 |1  | [What is Vue?](#what-is-Vue) |
-|2  | [What is advantages of Vue?](#What-is-advantages-of-Vue) |
-|3  | [Explain Vue.js reactivity and common issues when tracking changes?](#Explain-Vue.js-reactivity-and-common-issues-when-tracking-changes) |
+|20  | [What is advantages of Vue?](#What-is-advantages-of-Vue) |
 |4  | [What is the virtual DOM and how is it beneficial?](#what-is-the-virtual-DOM-and-how-is-it-beneficial) |
 |5  | [What are Components in Vue.js](#what-are-Components-in-Vue.js) |
 |6  | [Why do we need local registration?](#Why-do-we-need-local-registration?) |
@@ -30,6 +29,7 @@
 |17  | [When is the updated lifecycle hook called?](#When-is-the-updated-lifecycle-hook-called) |
 |18  | [Why not use the arrow function when writing a lifecycle hook or other option or property in a Vue instance?](#Why-not-use-the-arrow-function-when-writing-a-lifecycle-hook-or-other-option-or-property-in-a-Vue-instance) |
 |19  | [What is asynchronous component?](#what-is-asynchronous-component) |
+|20  | [What is the difference between v-show and v-if directives?](#What-is-the-difference-between-v-show-and-v-if-directives) |
 
 
 1. ### What is Vue?
@@ -344,5 +344,73 @@
       });
     ```
     When used in this way, webpack’s code splitting will be used to provide this functionality.
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+20. ### What is the difference between v-show and v-if directives?
+
+    Below are some of the main differences between between v-show and v-if directives,
+
+    1. v-if only renders the element to the DOM if the expression passes whereas v-show renders all elements to the DOM and then uses the CSS display property to show/hide elements based on expression.
+    2. v-if supports v-else and v-else-if directives whereas v-show doesn't support else directives.
+    3. v-if has higher toggle costs while v-show has higher initial render costs. i.e, v-show has a performance advantage if the elements are switched on and off frequently, while the v-if has the advantage when it comes to initial render time.
+    4. v-if supports <template> tab but v-show doesn't support.
+
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+21. ### What are rendering functions? for instance.
+
+    Vue allows us to build templates in a number of ways, the most common of which is to use only HTML with special instructions and mustache tags for response functions. But you can also use JavaScript to build templates using special function classes (called rendering functions). These functions are very close to the compiler, which means they are more efficient and faster than other template types. Because you use JavaScript to write rendering functions, you are free to use the language where you need to add custom functions directly.
+
+    It is very useful for advanced solutions of standard HTML templates.
+
+    **Here is the Vue program using HTML as a template** -
+
+    ```
+      new Vue({
+        el: '#app',
+        data: {
+          fruits: ['Apples', 'Oranges', 'Kiwi']
+        },
+        template:
+            `<div>
+               <h1>Fruit Basket</h1>
+               <ol>
+                 <li v-for="fruit in fruits">{{ fruit }}</li>
+               </ol>
+            </div>`
+      });
+    ```
+    **Here is the same program developed with rendering function** -
+
+    ```
+      new Vue({
+        el: '#app',
+        data: {
+          fruits: ['Apples', 'Oranges', 'Kiwi']
+        },
+        render: function(createElement) {
+          return createElement('div', [
+            createElement('h1', 'Fruit Basket'),
+            createElement('ol', this.fruits.map(function(fruit) {
+              return createElement('li', fruit);
+            }))
+          ]);
+        }
+      });
+    ```
+
+    **Output** -
+    ```
+      Fruit Basket
+
+      Apples
+      Oranges
+      Kiwi
+    ```
+
+    In the example above, we use a function that returns a series of createElement() Call, each of which is responsible for generating an element. Although the V-for instruction works in HTML based templates, when using rendering functions, you can simply use the standard.map() Function to traverse the fruits data array.
+
 
     **[⬆ Back to Top](#table-of-contents)**
