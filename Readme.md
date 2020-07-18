@@ -13,6 +13,7 @@
 | --- | --------- |
 |1  | [What is Vue?](#what-is-Vue) |
 |2  | [What is advantages of Vue?](#What-is-advantages-of-Vue) |
+|3  | [Explain Vue.js reactivity and common issues when tracking changes?](#Explain-Vue.js-reactivity-and-common-issues-when-tracking-changes) |
 |4  | [What is the virtual DOM and how is it beneficial?](#what-is-the-virtual-DOM-and-how-is-it-beneficial) |
 |5  | [What are Components in Vue.js](#what-are-Components-in-Vue.js) |
 |6  | [Why do we need local registration?](#Why-do-we-need-local-registration?) |
@@ -31,6 +32,8 @@
 |19  | [What is asynchronous component?](#what-is-asynchronous-component) |
 |20  | [What is the difference between v-show and v-if directives?](#What-is-the-difference-between-v-show-and-v-if-directives) |
 |21  | [What are rendering functions? for instance](#what-are-rendering-functions-for-instance) |
+|22  | [What is mixin?](#what-is-mixin) |
+|23  | [How does prop specify its type requirements?](#How-does-prop-specify-its-type-requirements) |
 
 
 1. ### What is Vue?
@@ -412,6 +415,36 @@
     ```
 
     In the example above, we use a function that returns a series of createElement() Call, each of which is responsible for generating an element. Although the V-for instruction works in HTML based templates, when using rendering functions, you can simply use the standard.map() Function to traverse the fruits data array.
+
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+22. ### What is mixin?
+
+    Mixins enables us to write pluggable and reusable features for Vue components. If you want to reuse a set of component options between multiple components, such as lifecycle hooks, methods, etc., you can write it as mixins and simply reference it in the component. Then merge the contents of mixin into the component. If you want to define a lifecycle hook in mixin, it will take precedence over the component’s own hook when executed.
+
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+23. ### How does prop specify its type requirements?
+
+    By implementing the prop verification option, you can specify type requirements for a single prop. This has no impact on production, but warnings are issued during the development phase to help developers identify potential problems with specific types of requirements for incoming data and props.
+
+    To configure three props -
+    
+    ```
+    props: {
+        accountNumber: {
+            type: Number,
+            required: true
+        },
+        name: {
+            type: String,
+            required: true
+       },
+       favoriteColors: Array
+    }
+    ```
 
 
     **[⬆ Back to Top](#table-of-contents)**
