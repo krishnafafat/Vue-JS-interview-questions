@@ -34,8 +34,8 @@
 |14  | [Explain lifecycle hooks in vue.js?](#Explain-lifecycle-hooks-in-vue.js) |
 |15  | [How to listen to events?](#How-to-listen-to-events) |
 |16  | [Which lifecycle hook is most suitable for getting data from API calls?](#Which-lifecycle-hook-is-most-suitable-for-getting-data-from-API-calls) |
-|17  | [When is the “updated” lifecycle hook called?](#When-is-the-“updated”-lifecycle-hook-called) |
-|18  | [Why not use the arrow function when writing a lifecycle hook or other option / property in a Vue instance?](#Why-not-use-the-arrow-function-when-writing-a-lifecycle-hook-or-other-option-/-property-in-a-Vue-instance) |
+|17  | [When is the updated lifecycle hook called?](#When-is-the-updated-lifecycle-hook-called) |
+|18  | [Why not use the arrow function when writing a lifecycle hook or other option or property in a Vue instance?](#Why-not-use-the-arrow-function-when-writing-a-lifecycle-hook-or-other-option-or-property-in-a-Vue-instance) |
 |19  | [What is asynchronous component?](#what-is-asynchronous-component) |
 
 
@@ -321,14 +321,14 @@
 
     **[⬆ Back to Top](#table-of-contents)**
 
-17. ### When is the “updated” lifecycle hook called?
+17. ### When is the updated lifecycle hook called?
 
     After the responsive data is updated and the virtual DOM is re rendered, the updated hook is called. It can be used to perform DOM related operations, but (by default) there is no guarantee that subcomponents will be rendered, although it can also be used in update functions **this.$nextTick** To ensure that.
 
 
     **[⬆ Back to Top](#table-of-contents)**
 
-18. ### Why not use the arrow function when writing a lifecycle hook or other option / property in a Vue instance?
+18. ### Why not use the arrow function when writing a lifecycle hook or other option or property in a Vue instance?
 
     Arrow function is not defined by itself **this** Context, but bound to the context of its parent function. When you use arrow function in Vue program（=> When **this** Keyword disease is not bound to a Vue instance, so an error is raised. Therefore, it is strongly recommended to use the standard function declaration instead.
 
