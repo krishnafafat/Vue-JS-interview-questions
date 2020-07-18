@@ -363,7 +363,7 @@
 
 **[⬆ Back to Top](#table-of-contents)**
 
-21. ### What are rendering functions? for instance.
+21.   ### What are rendering functions? for instance.
 
     Vue allows us to build templates in a number of ways, the most common of which is to use only HTML with special instructions and mustache tags for response functions. But you can also use JavaScript to build templates using special function classes (called rendering functions). These functions are very close to the compiler, which means they are more efficient and faster than other template types. Because you use JavaScript to write rendering functions, you are free to use the language where you need to add custom functions directly.
 
