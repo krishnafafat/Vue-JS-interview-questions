@@ -12,7 +12,7 @@
 | No. | Questions |
 | --- | --------- |
 |1  | [What is Vue?](#what-is-Vue) |
-|20  | [What is advantages of Vue?](#What-is-advantages-of-Vue) |
+|2  | [What is advantages of Vue?](#What-is-advantages-of-Vue) |
 |4  | [What is the virtual DOM and how is it beneficial?](#what-is-the-virtual-DOM-and-how-is-it-beneficial) |
 |5  | [What are Components in Vue.js](#what-are-Components-in-Vue.js) |
 |6  | [Why do we need local registration?](#Why-do-we-need-local-registration?) |
