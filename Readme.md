@@ -34,6 +34,8 @@
 |21  | [What is mixin?](#what-is-mixin) |
 |22  | [How does prop specify its type requirements?](#How-does-prop-specify-its-type-requirements) |
 |23  | [What is the difference between v-show and v-if directives?](#What-is-the-difference-between-v-show-and-v-if-directives) |
+|24 | [What is Vue Router?](#what-is-Vue-Router) |
+
 
 1. ### What is Vue?
 
@@ -438,12 +440,27 @@
 
 23. ### What is the difference between v-show and v-if directives?
 
-    Below are some of the main differences between between v-show and v-if directives,
+    Below are some of the main differences between v-show and v-if directives -
+    1. v-if only renders the element to the DOM if the expression passes whereas v-show renders all elements to the DOM and then uses the CSS display property to show/hide elements based on expression.
+    2. v-if supports v-else and v-else-if directives whereas v-show doesn't support else directives.
+    3. v-if has higher toggle costs while v-show has higher initial render costs. i.e, v-show has a performance advantage if the elements are switched on and off frequently, while the v-if has the advantage when it comes to initial render time.
+    4. v-if supports <template> tab but v-show doesn't support.
 
-    * v-if only renders the element to the DOM if the expression passes whereas v-show renders all elements to the DOM and then uses the CSS display property to show/hide elements based on expression.
-    * v-if supports v-else and v-else-if directives whereas v-show doesn't support else directives.
-    * v-if has higher toggle costs while v-show has higher initial render costs. i.e, v-show has a performance advantage if the elements are switched on and off frequently, while the v-if has the advantage when it comes to initial render time.
-    * v-if supports <template> tab but v-show doesn't support.
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+24. ### What is Vue Router?
+
+    Vue Router is the official router for Vue.js. It deeply integrates with Vue.js core to make building Single Page Applications with Vue.js easy to implement. Its features include -
+
+    1. Nested route/view mapping
+    2. Modular, component-based router configuration
+    3. Route params, query, wildcards
+    4. View transition effects powered by Vue.js’ transition system
+    5. Fine-grained navigation control
+    6. Links with automatic active CSS classes
+    7. Customizable Scroll Behavior
+    8. HTML5 history mode or hash mode, with auto-fallback in IE9
 
 
-**[⬆ Back to Top](#table-of-contents)**
+    **[⬆ Back to Top](#table-of-contents)**
