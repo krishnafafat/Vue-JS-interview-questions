@@ -361,7 +361,7 @@
     * v-if supports <template> tab but v-show doesn't support.
 
 
-  **[⬆ Back to Top](#table-of-contents)**
+**[⬆ Back to Top](#table-of-contents)**
 
 21. ### What are rendering functions? for instance.
 
