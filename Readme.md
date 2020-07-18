@@ -30,6 +30,7 @@
 |18  | [Why not use the arrow function when writing a lifecycle hook or other option or property in a Vue instance?](#Why-not-use-the-arrow-function-when-writing-a-lifecycle-hook-or-other-option-or-property-in-a-Vue-instance) |
 |19  | [What is asynchronous component?](#what-is-asynchronous-component) |
 |20  | [What is the difference between v-show and v-if directives?](#What-is-the-difference-between-v-show-and-v-if-directives) |
+|21  | [What are rendering functions? for instance](#what-are-rendering-functions-for-instance) |
 
 
 1. ### What is Vue?
