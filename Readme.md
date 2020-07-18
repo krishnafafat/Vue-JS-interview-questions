@@ -128,62 +128,62 @@
 
    **[⬆ Back to Top](#table-of-contents)**
 
- 8. ### What are the event modifiers available in Vue.js?
+8. ### What are the event modifiers available in Vue.js?
 
-     The list of available event modifiers is given below:
+   The list of available event modifiers is given below:
 
-     1. stop
-     2. prevent
-     3. capture
-     4. self
-     5. once
-     6. passive
+   1. stop
+   2. prevent
+   3. capture
+   4. self
+   5. once
+   6. passive
 
 
    **[⬆ Back to Top](#table-of-contents)**
 
-  9. ### Explain how can we work with binding inline styles?
+9. ### Explain how can we work with binding inline styles?
 
-     V-bind: style can be used as a code that is straightforward in inline style binding. The look is closely similar to CSS except for its JavaScript feature. Either kebab-case or camelCase can be used for the CSS property names. Shown below is a sample snippet code:
+   V-bind: style can be used as a code that is straightforward in inline style binding. The look is closely similar to CSS except for its JavaScript feature. Either kebab-case or camelCase can be used for the CSS property names. Shown below is a sample snippet code:
 
-     ```
+   ```
       <div v-bind:style="{ color: activeColor, fontSize: fontSize + 'px' }"></div>
       data: {
       activeColor: 'red',
       fontSize: 30
       }
-     ```
+   ```
 
 
    **[⬆ Back to Top](#table-of-contents)**
 
-  10. ### List type of Directive are available in Vuejs?
+10. ### List type of Directive are available in Vuejs?
 
-      Following is list of directives available in Vue.js:
+    Following is list of directives available in Vue.js:
 
-      1. Empty Directives - Empty directives do not require and will ignore their attribute value. e.g. v-pre(skip) and v-cloak (display: none).
+    1. Empty Directives - Empty directives do not require and will ignore their attribute value. e.g. v-pre(skip) and v-cloak (display: none).
 
-      ```
+    ```
         <div v-pre>
         <!-- markup in here will not be compiled -->
         </div>
-      ```
-      2. Custom Directive -
-      3. Literal Directives
-      4. General Directives
+    ```
+    2. Custom Directive -
+    3. Literal Directives
+    4. General Directives
 
 
-   **[⬆ Back to Top](#table-of-contents)**
+    **[⬆ Back to Top](#table-of-contents)**
 
-  11. ### What are Directives in VUE.js, List some of them you used?
+11. ### What are Directives in VUE.js, List some of them you used?
 
-      Directives in Vue.js extend HTML with attributes and tags. Vue.js has built-in directives, but you can also make your custom directives. Following is a list of some directives used:
+    Directives in Vue.js extend HTML with attributes and tags. Vue.js has built-in directives, but you can also make your custom directives. Following is a list of some directives used:
 
-      1. v-else
-      2. v-on
-      3. v-model
-      4. v-show
-      5. v-if
+    1. v-else
+    2. v-on
+    3. v-model
+    4. v-show
+    5. v-if
 
 
-   **[⬆ Back to Top](#table-of-contents)**
+    **[⬆ Back to Top](#table-of-contents)**
