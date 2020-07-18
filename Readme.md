@@ -1,15 +1,8 @@
-# Vue JS Interview Questions & Answers
-
-> Click :star:if you like the project. Pull Request are highly appreciated.
 
 ---
 
 <div align="center">
-    <p>
-        <b>Having Tech Interview?</b>
-        <br> Tech Interview Questions. <b>Answered</b>.
-        <sub><i>Proudly supporting Vue Interview Questions</i></sub>
-    </p>
+    <p>Vuejs Technical Interview Questions & Answered</p>
 </div>
 
 ---
