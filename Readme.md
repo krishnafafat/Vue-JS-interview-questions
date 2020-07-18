@@ -26,7 +26,8 @@
 |5  | [What are Components in Vue.js](#what-are-Components-in-Vue.js) |
 |6  | [Why do we need local registration?](#Why-do-we-need-local-registration?) |
 |7  | [What are list of features in Vue.js](#what-are-list-of-features-in-Vue.js) |
-
+|8  | [What are the event modifiers available in Vue.js](#what-are-the-event-modifiers-available-in-Vue.js) |
+|9  | [Explain how can we work with binding inline styles?](#Explain-how-can-we-work-with-binding-inline-styles) |  
 
 
 1. ### What is Vue?
@@ -38,13 +39,13 @@
 
 2. ### What is advantages of Vue?
 
-    **Small in size** — The size of Vue framework is 18 to 21KB and it takes no time for the user to download and use it.
-    **Easy to Understand** — One of the reasons for the popularity of this framework is that it is quite easy to understand. The user can easily add Vue.js to his web project because of its simple structure.
-    **Simple Integration** — Vue.js can be integrated with the existing applications easily.
-    **Flexibility** — This flexibility also makes it easy to understand for the developers of React.js, Angular.js, and any other new JavaScript framework.
-    **Virtual DOM** — It uses virtual DOM similar to other existing frameworks such as ReactJS, Ember etc. Virtual DOM is a light-weight in-memory tree representation of the original HTML DOM and updated without affecting the original DOM.
-    **Components** — Used to create reusable custom elements in VueJS applications.
-    **Two-Way Communication** — Vue.js also facilitates two way communications because of its MVVM architecture which makes it quite easy to handle HTML blocks.
+    1. **Small in size** — The size of Vue framework is 18 to 21KB and it takes no time for the user to download and use it.
+    2. **Easy to Understand** — One of the reasons for the popularity of this framework is that it is quite easy to understand. The user can easily add Vue.js to his web project because of its simple structure.
+    3. **Simple Integration** — Vue.js can be integrated with the existing applications easily.
+    4. **Flexibility** — This flexibility also makes it easy to understand for the developers of React.js, Angular.js, and any other new JavaScript framework.
+    5. **Virtual DOM** — It uses virtual DOM similar to other existing frameworks such as ReactJS, Ember etc. Virtual DOM is a light-weight in-memory tree representation of the original HTML DOM and updated without affecting the original DOM.
+    6. **Components** — Used to create reusable custom elements in VueJS applications.
+    7. **Two-Way Communication** — Vue.js also facilitates two way communications because of its MVVM architecture which makes it quite easy to handle HTML blocks.
 
 
    **[⬆ Back to Top](#table-of-contents)**
@@ -96,7 +97,6 @@
     const ComponentA =  {/* ..... */}
     const ComponentB =  {/* ..... */}
     const ComponentC =  {/* ..... */}
-
     ```
     Then define the components you’d like to use in a components option:  
 
@@ -109,7 +109,6 @@
           'component-c': 'ComponentC',
       }
     }
-
     ```
 
    **[⬆ Back to Top](#table-of-contents)**
@@ -119,11 +118,65 @@
 
     Vue js comes with following features
 
-    **Templates**
-    **Reactivity**
-    **Components**
-    **Transitions**
-    **Routing**
+    1. **Templates**
+    2. **Reactivity**
+    3. **Components**
+    4. **Transitions**
+    5. **Routing**
 
 
    **[⬆ Back to Top](#table-of-contents)**
+
+ 8. ### What are the event modifiers available in Vue.js?
+
+     The list of available event modifiers is given below:
+
+     1. stop
+     2. prevent
+     3. capture
+     4. self
+     5. once
+     6. passive
+
+
+   **[⬆ Back to Top](#table-of-contents)**
+
+  9. ### Explain how can we work with binding inline styles?
+
+      V-bind: style can be used as a code that is straightforward in inline style binding. The look is closely similar to CSS except for its JavaScript feature. Either kebab-case or camelCase can be used for the CSS property names. Shown below is a sample snippet code:
+
+      ```
+      <div v-bind:style="{ color: activeColor, fontSize: fontSize + 'px' }"></div>
+      data: {
+      activeColor: 'red',
+      fontSize: 30
+      }
+      ```
+
+
+   **[⬆ Back to Top](#table-of-contents)**
+
+  10. ### List type of Directive are available in Vuejs?
+
+       Following is list of directives available in Vue.js:
+
+       1. Empty Directives - Empty directives do not require and will ignore their attribute value. e.g. v-pre(skip) and v-cloak (display: none).
+
+        ```
+        <div v-pre>
+        <!-- markup in here will not be compiled -->
+        </div>
+        ```
+       2. Custom Directive -
+       3. Literal Directives
+       4. General Directives
+
+  11. ### What are Directives in VUE.js, List some of them you used?
+
+       Directives in Vue.js extend HTML with attributes and tags. Vue.js has built-in directives, but you can also make your custom directives. Following is a list of some directives used:
+
+       1. v-else
+       2. v-on
+       3. v-model
+       4. v-show
+       5. v-if
