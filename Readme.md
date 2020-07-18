@@ -40,6 +40,7 @@
 |27  | [What is the role of ref in Vue?](#what-is-the-role-of-ref-in-Vue) |
 |28  | [What is Vue props?](#what-is-Vue-props) |
 |29  | [How do you set up a Webpack in Vue?](#How-do-you-set-up-a-Webpack-in-Vue) |
+|30  | [What is slot and slot-scoped in Vue?](#what-is-slot-and-slot-scoped-in-Vue) |
 
 
 1. ### What is Vue?
@@ -528,12 +529,13 @@
 
 29. ### How do you set up a Webpack in Vue?
 
-    Step#1: Ste up Webpack:
+    Step#1: Set up Webpack:
 
     * Install Babel-loader and Webpack module:
     * npm install babel-loader webpack –save-dev
     * Open Webpack package.json and add a webpack script
     * In es6-tutorial, create a new file named webpack.config.js defined as follows -
+
 
     ```
     var path = require(‘path’);
@@ -565,6 +567,53 @@
     Run following command: **npm run webpack**
 
     Open browser, access http://localhost:8080/, and click on the calculate button.
+
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+30. ### What is slot and slot-scoped in vue?
+
+    Slots are a mechanism for Vue components that allows you to compose your components in a way other than the strict parent-child relationship. Slots give you an outlet to place content in new places or make components more generic.
+
+    **default slot** - when you have a single slot in a component. We create them by adding <slot> in the template where we want to be able to inject our content. This <slot> tag will be replaced with any content passed to the component’s template.
+
+    ```
+    <template>
+      <div class="frame">
+        <slot></slot>
+      </div>
+    </template>
+    ```
+
+    **named slot** - when you have multiple slots in a component and we want to inject different content in different places (slots). We create those by adding <slot> with a name attribute (e.g. <slot name="header"></slot>). Then when we render our component, we provide a slot content for each named slot by adding a slot attribute with the slot name.
+
+    ```
+      <base-layout>
+        <template slot="header">
+          <h1>My awsome header</h1>
+        </template>
+        <template slot="footer">
+          <p>My awsome footer</p>
+        </template>
+      </base-layout>
+    ```
+    By doing that, the <slot> tags in the component will be replaced by content passed to the component.
+
+    **scoped slot** - when you want a template inside a slot to access data from the child component that renders the slot content. This is particularly useful when you need freedom in creating custom templates that use the child component’s data properties.
+
+    To create the scope we just need to add a prop in the slot tag with the data needed in the parent <slot :header="header" /> and then in the parent component receive it with slot-scope="{ header }" (see ES6 destructuring) or slot-scope="data" (without ES6).
+
+    ```
+      <th slot="header" slot-scope="{ header }">
+        {{ header.label }}
+      </th>
+
+      or
+
+      <th slot="header" slot-scope="data">
+        {{ data.header.label }}
+      </th>
+    ```
 
 
     **[⬆ Back to Top](#table-of-contents)**
