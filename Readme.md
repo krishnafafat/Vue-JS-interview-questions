@@ -35,6 +35,9 @@
 |22  | [How does prop specify its type requirements?](#How-does-prop-specify-its-type-requirements) |
 |23  | [What is the difference between v-show and v-if directives?](#What-is-the-difference-between-v-show-and-v-if-directives) |
 |24 | [What is Vue Router?](#what-is-Vue-Router) |
+|25 | [What is $parent in Vue.js?](#what-is-$parent-in-Vue.js) |
+|26 | [What is :key in Vue.js?](#what-is-:key-in-Vue.js) |
+|27 | [What is the role of ref in Vue.js?](#what-is-the-role-of-ref-in-Vue.js) |
 
 
 1. ### What is Vue?
@@ -462,6 +465,54 @@
     6. Links with automatic active CSS classes
     7. Customizable Scroll Behavior
     8. HTML5 history mode or hash mode, with auto-fallback in IE9
+
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+25. ### What is $parent in Vue?
+
+    Similar to $root, the $parent property can be used to access the parent instance from a child.
+
+    Although it provides direct access, it makes the application hard to test and debug. And we can not easily find out the where the mutation come from.
+
+    Vue also provides $child just like $parent, but it can be used to access the child instance.
+
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+26. ### What is :key in Vue.js?
+
+    In order to render DOM elements more efficiently, Vue.js reuses the elements instead of creating them from scratch every time. This default mode is efficient, but in some cases it may causes problems. For example, if you try to render the same input element in both v-if and v-else blocks then it holds the previous value as below:
+
+    ```
+    <templete v-if="loginType === 'ADMIN'">
+      <label>ADMIN</label>
+      <input v-for="Enter your ID" :key="admin-id" />
+    </templete>
+    <templete v-else>
+      <label>GUEST</label>
+      <input v-for="Enter your Name" :key="user-name" />
+    </templete>
+    ```
+
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+27. ### What is the role of ref in Vue.js?
+
+    Despite the existence of props and events, sometimes if we still need to directly access a child component, we can assign a reference ID to the child component using the ref attribute. For example -
+
+    ```
+    <child-component ref="componentId"></child-component>
+    ```
+
+    Now in the component where we have defined this ref, we can use -
+
+    ```
+    this.$refs.componentId
+    ```
+
+    $refs are only populated after the component has been rendered, and they are not reactive. Hence we should avoid accessing $refs from within templates or computed properties.
 
 
     **[⬆ Back to Top](#table-of-contents)**
