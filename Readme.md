@@ -52,6 +52,7 @@
 |39  | [What are built-in components?](#what-are-built-in-components) |
 |40  | [What is event key modifiers?](#what-is-event-key-modifiers) |
 |41  | [How to modify event?](#How-to-modify-event) |
+|42  | [What is the difference between Methods, Computed, and Watchers?](#What-is-the-difference-between-Methods-Computed-and-Watchers) |
 
 
 1. ### What is Vue?
@@ -830,5 +831,107 @@
     ```
     The above code sample would remove the default behavior of the a tag and just call the addToCount  method. If we didn’t add the modifier, the page would try to re-direct to the path defined in the href attribute.
 
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+42. ### What is the difference between Methods, Computed, and Watchers?
+
+    Methods are just static functions that run once called upon. You can pass in arguments, and they can return a value but are not required to.
+    ```
+    methods: {
+      reverseMessage: function () {
+        return this.message.split('').reverse().join('')
+      }
+    }
+    ```
+
+    **Computed** - Computed properties are very valuable for manipulating data that already exists. Anytime you’re building something where you need to sort through a large group of data and you don’t want to rerun those calculations on every keystroke, think about using a computed value.
+
+    Some good candidates include, but are not limited to:
+
+    * Updating a large amount of information while a user is typing, such as filtering a list
+    * Gathering information from your Vuex store
+    * Form validation
+    * Data visualizations that change depending on what the user needs to see
+
+    Computed properties aren’t used like methods, though at first, they might look similar- you’re stating some logic in a function and returning- but the name of that function becomes a property that you’d then use in your application like data.
+
+    **Example** - Suppose If we needed to filter this big list of names of heroes based on what the user was typing, here’s how we would do it. We’re keeping this really simple so you can get the base concepts down. Originally our list would output in our template using names, which we store in data:
+
+    ```
+    new Vue({
+      el: '#app',
+      data() {
+        return {
+          names: [
+            'Evan You',
+            'John Lindquist',
+            'Jen Looper',
+            'Miriam Suzanne',
+            ...
+          ]
+        }
+      }
+    })
+    ```
+    ```
+    <div id="app">
+      <h1>Heroes</h1>
+      <ul>
+        <li v-for="name in names">
+          {{ name }}
+        </li>
+      </ul>
+    </div>
+    ```
+    Now let’s create a filter for those names. We’ll start by creating an input with v-model that will originally be an empty string, but we’ll eventually use to match and filter through our list. We’ll call this property findName and you can see it referenced both on the input and in the data.
+
+    ```
+    <label for="filtername">Find your hero:</label>
+    <input v-model="findName" id="filtername" type="text" />
+    ```
+    ```
+    data() {
+      return {
+        findName: '',
+        names: [
+          'Evan You',
+          'John Lindquist',
+          ...
+        ]
+      }
+    }
+    ```
+    Now, we can create the computed property that will filter all of the names based on what the user has typed into the input, so anything in our findName property. You’ll note that I’m using regex here to make sure that mismatched capitalization doesn’t matter, as users will typically not capitalize as they type.
+
+    ```
+    computed: {
+      filteredNames() {
+        let filter = new RegExp(this.findName, 'i')
+        return this.names.filter(el => el.match(filter))
+      }
+    }
+    ```
+
+    And now we’ll update what we’re using in the template to output from this:
+
+    ```
+    <ul>
+      <li v-for="name in names">
+        {{ name }}
+      </li>
+    </ul>
+    ```
+    to this:
+    ```
+    <ul>
+      <li v-for="name in filteredNames">
+        {{ name }}
+      </li>
+    </ul>
+    ```
+    And it filters for us on every keystroke! We only had to add a couple of lines of code to make this work, and didn’t have to load any additional libraries.
+
+    **Watchers** -
 
     **[⬆ Back to Top](#table-of-contents)**
